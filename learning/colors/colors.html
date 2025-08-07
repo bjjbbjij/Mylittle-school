@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم الألوان - My Little School</title>
+    <link rel="stylesheet" href="colors.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">تعلم الألوان العربية</h1>
+            <p class="subtitle">Learn Arabic Colors</p>
+        </header>
+
+        <nav class="navigation">
+            <button class="nav-btn" onclick="window.location.href='../../learning.html'">← العودة لمنطقة التعلم</button>
+            <button class="nav-btn" onclick="window.location.href='../../index.html'">← العودة للصفحة الرئيسية</button>
+        </nav>
+
+        <main>
+            <div class="colors-grid">
+                <div class="color-card" data-color="أحمر">
+                    <div class="color-display" style="background-color: #FF0000;"></div>
+                    <h3>أحمر</h3>
+                    <p>Red</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #FF0000;"></div>
+                        <div class="example-item" style="background-color: #FF3333;"></div>
+                        <div class="example-item" style="background-color: #CC0000;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('ahmar')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="أزرق">
+                    <div class="color-display" style="background-color: #0000FF;"></div>
+                    <h3>أزرق</h3>
+                    <p>Blue</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #0000FF;"></div>
+                        <div class="example-item" style="background-color: #3333FF;"></div>
+                        <div class="example-item" style="background-color: #0000CC;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('azraq')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="أصفر">
+                    <div class="color-display" style="background-color: #FFFF00;"></div>
+                    <h3>أصفر</h3>
+                    <p>Yellow</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #FFFF00;"></div>
+                        <div class="example-item" style="background-color: #FFFF33;"></div>
+                        <div class="example-item" style="background-color: #CCCC00;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('asfar')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="أخضر">
+                    <div class="color-display" style="background-color: #00FF00;"></div>
+                    <h3>أخضر</h3>
+                    <p>Green</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #00FF00;"></div>
+                        <div class="example-item" style="background-color: #33FF33;"></div>
+                        <div class="example-item" style="background-color: #00CC00;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('akhdar')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="برتقالي">
+                    <div class="color-display" style="background-color: #FFA500;"></div>
+                    <h3>برتقالي</h3>
+                    <p>Orange</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #FFA500;"></div>
+                        <div class="example-item" style="background-color: #FFB333;"></div>
+                        <div class="example-item" style="background-color: #CC8400;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('burtuqali')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="بنفسجي">
+                    <div class="color-display" style="background-color: #800080;"></div>
+                    <h3>بنفسجي</h3>
+                    <p>Purple</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #800080;"></div>
+                        <div class="example-item" style="background-color: #9933CC;"></div>
+                        <div class="example-item" style="background-color: #660066;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('banafsaji')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="وردي">
+                    <div class="color-display" style="background-color: #FFC0CB;"></div>
+                    <h3>وردي</h3>
+                    <p>Pink</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #FFC0CB;"></div>
+                        <div class="example-item" style="background-color: #FFB6C1;"></div>
+                        <div class="example-item" style="background-color: #FF69B4;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('wardi')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="بني">
+                    <div class="color-display" style="background-color: #A52A2A;"></div>
+                    <h3>بني</h3>
+                    <p>Brown</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #A52A2A;"></div>
+                        <div class="example-item" style="background-color: #8B4513;"></div>
+                        <div class="example-item" style="background-color: #654321;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('bunni')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="أسود">
+                    <div class="color-display" style="background-color: #000000;"></div>
+                    <h3>أسود</h3>
+                    <p>Black</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #000000;"></div>
+                        <div class="example-item" style="background-color: #333333;"></div>
+                        <div class="example-item" style="background-color: #666666;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('aswad')">🔊 استمع</button>
+                </div>
+                <div class="color-card" data-color="أبيض">
+                    <div class="color-display" style="background-color: #FFFFFF; border: 2px solid #ddd;"></div>
+                    <h3>أبيض</h3>
+                    <p>White</p>
+                    <div class="color-examples">
+                        <div class="example-item" style="background-color: #FFFFFF; border: 1px solid #ddd;"></div>
+                        <div class="example-item" style="background-color: #F5F5F5;"></div>
+                        <div class="example-item" style="background-color: #E8E8E8;"></div>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('abyad')">🔊 استمع</button>
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+
+    <script src="colors.js"></script>
+</body>
+</html> 

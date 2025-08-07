@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    flex: 1;
+}
+
+.animals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.animal-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.animal-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.animal-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.animal-card:hover .animal-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.animal-card h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.animal-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.animal-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.habitat, .sound {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.animal-card:hover .habitat,
+.animal-card:hover .sound {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.listen-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    width: 100%;
+}
+
+.listen-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.stars-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.stars {
+    margin-bottom: 5px;
+}
+
+.star {
+    font-size: 1.2rem;
+    margin: 0 2px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.star.active {
+    opacity: 1;
+}
+
+.stars-count {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Animal-specific animations */
+.animal-card[data-animal="أسد"]:hover .animal-icon {
+    animation: lionRoar 0.5s ease-in-out;
+}
+
+.animal-card[data-animal="فيل"]:hover .animal-icon {
+    animation: elephantWalk 1s ease-in-out;
+}
+
+.animal-card[data-animal="زرافة"]:hover .animal-icon {
+    animation: giraffeStretch 0.8s ease-in-out;
+}
+
+.animal-card[data-animal="قرد"]:hover .animal-icon {
+    animation: monkeyJump 0.6s ease-in-out;
+}
+
+.animal-card[data-animal="حصان"]:hover .animal-icon {
+    animation: horseGallop 0.7s ease-in-out;
+}
+
+.animal-card[data-animal="بقرة"]:hover .animal-icon {
+    animation: cowMoo 0.5s ease-in-out;
+}
+
+.animal-card[data-animal="خروف"]:hover .animal-icon {
+    animation: sheepBounce 0.6s ease-in-out;
+}
+
+.animal-card[data-animal="دجاجة"]:hover .animal-icon {
+    animation: chickenPeck 0.4s ease-in-out;
+}
+
+.animal-card[data-animal="كلب"]:hover .animal-icon {
+    animation: dogWag 0.5s ease-in-out;
+}
+
+.animal-card[data-animal="قط"]:hover .animal-icon {
+    animation: catStretch 0.8s ease-in-out;
+}
+
+/* Animal animations */
+@keyframes lionRoar {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(5deg); }
+}
+
+@keyframes elephantWalk {
+    0%, 100% { transform: translateX(0) scale(1); }
+    25% { transform: translateX(-5px) scale(1.05); }
+    75% { transform: translateX(5px) scale(1.05); }
+}
+
+@keyframes giraffeStretch {
+    0%, 100% { transform: scaleY(1) scaleX(1); }
+    50% { transform: scaleY(1.3) scaleX(0.9); }
+}
+
+@keyframes monkeyJump {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(10deg); }
+}
+
+@keyframes horseGallop {
+    0%, 100% { transform: translateX(0) scale(1); }
+    25% { transform: translateX(-8px) scale(1.1); }
+    75% { transform: translateX(8px) scale(1.1); }
+}
+
+@keyframes cowMoo {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.15) rotate(-3deg); }
+}
+
+@keyframes sheepBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.1); }
+}
+
+@keyframes chickenPeck {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(-10deg); }
+}
+
+@keyframes dogWag {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-5deg) scale(1.05); }
+    75% { transform: rotate(5deg) scale(1.05); }
+}
+
+@keyframes catStretch {
+    0%, 100% { transform: scaleX(1) scaleY(1); }
+    50% { transform: scaleX(1.2) scaleY(0.9); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .animals-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .animal-icon {
+        font-size: 3rem;
+    }
+    
+    .animal-card {
+        padding: 20px;
+    }
+    
+    .animal-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .animals-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .animal-icon {
+        font-size: 2.5rem;
+    }
+    
+    .animal-card {
+        padding: 15px;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .habitat, .sound {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+} 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم الحيوانات - My Little School</title>
+    <link rel="stylesheet" href="animals.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">تعلم الحيوانات العربية</h1>
+            <p class="subtitle">Learn Arabic Animals</p>
+        </header>
+
+        <nav class="navigation">
+            <button class="nav-btn" onclick="window.location.href='../../learning.html'">← العودة لمنطقة التعلم</button>
+            <button class="nav-btn" onclick="window.location.href='../../index.html'">← العودة للصفحة الرئيسية</button>
+        </nav>
+
+        <main>
+            <div class="animals-grid">
+                <div class="animal-card" data-animal="أسد">
+                    <div class="animal-icon">🦁</div>
+                    <h3>أسد</h3>
+                    <p>Lion</p>
+                    <div class="animal-info">
+                        <span class="habitat">🏜️ البراري</span>
+                        <span class="sound">🦁 زئير</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('asad')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="فيل">
+                    <div class="animal-icon">🐘</div>
+                    <h3>فيل</h3>
+                    <p>Elephant</p>
+                    <div class="animal-info">
+                        <span class="habitat">🌿 الغابة</span>
+                        <span class="sound">🐘 نقيق</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('feel')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="زرافة">
+                    <div class="animal-icon">🦒</div>
+                    <h3>زرافة</h3>
+                    <p>Giraffe</p>
+                    <div class="animal-info">
+                        <span class="habitat">🌿 السافانا</span>
+                        <span class="sound">🦒 همهمة</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('zaraafa')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="قرد">
+                    <div class="animal-icon">🐒</div>
+                    <h3>قرد</h3>
+                    <p>Monkey</p>
+                    <div class="animal-info">
+                        <span class="habitat">🌳 الأشجار</span>
+                        <span class="sound">🐒 صرير</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('qird')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="حصان">
+                    <div class="animal-icon">🐎</div>
+                    <h3>حصان</h3>
+                    <p>Horse</p>
+                    <div class="animal-info">
+                        <span class="habitat">🏇 المزرعة</span>
+                        <span class="sound">🐎 صهيل</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('hisan')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="بقرة">
+                    <div class="animal-icon">🐄</div>
+                    <h3>بقرة</h3>
+                    <p>Cow</p>
+                    <div class="animal-info">
+                        <span class="habitat">🐄 المزرعة</span>
+                        <span class="sound">🐄 خوار</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('baqara')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="خروف">
+                    <div class="animal-icon">🐑</div>
+                    <h3>خروف</h3>
+                    <p>Sheep</p>
+                    <div class="animal-info">
+                        <span class="habitat">🐑 المرعى</span>
+                        <span class="sound">🐑 ثغاء</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('kharuf')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="دجاجة">
+                    <div class="animal-icon">🐔</div>
+                    <h3>دجاجة</h3>
+                    <p>Chicken</p>
+                    <div class="animal-info">
+                        <span class="habitat">🐔 المزرعة</span>
+                        <span class="sound">🐔 نقنقة</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('dajaja')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="كلب">
+                    <div class="animal-icon">🐕</div>
+                    <h3>كلب</h3>
+                    <p>Dog</p>
+                    <div class="animal-info">
+                        <span class="habitat">🏠 المنزل</span>
+                        <span class="sound">🐕 نباح</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('kalb')">🔊 استمع</button>
+                </div>
+                <div class="animal-card" data-animal="قط">
+                    <div class="animal-icon">🐱</div>
+                    <h3>قط</h3>
+                    <p>Cat</p>
+                    <div class="animal-info">
+                        <span class="habitat">🏠 المنزل</span>
+                        <span class="sound">🐱 مواء</span>
+                    </div>
+                    <button class="listen-btn" onclick="playSound('qitt')">🔊 استمع</button>
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+
+    <script src="animals.js"></script>
+</body>
+</html> 

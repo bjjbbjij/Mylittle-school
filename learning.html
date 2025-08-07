@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#219ebc" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>منطقة التعلم | مدرستي الصغيرة</title>
+  <link rel="stylesheet" href="css/learning.css">
+  <link rel="stylesheet" href="css/mobile-enhancements.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="learning-container">
+    <header>
+      <h1 class="learning-title" role="heading" aria-level="1">
+        <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+        منطقة التعلم
+      </h1>
+      <p class="learning-desc" role="banner">اختر القسم الذي تريد تعلمه:</p>
+    </header>
+    
+    <div class="learning-sections" role="main" aria-label="أقسام التعلم">
+      <a class="learning-card" href="learning/letters/letters.html" role="button" aria-label="تعلم الحروف العربية">
+        <i class="fa-solid fa-font" aria-hidden="true"></i>
+        <span>الحروف</span>
+      </a>
+      <a class="learning-card" href="learning/numbers/numbers.html" role="button" aria-label="تعلم الأرقام">
+        <i class="fa-solid fa-hashtag" aria-hidden="true"></i>
+        <span>الأرقام</span>
+      </a>
+      <a class="learning-card" href="learning/colors/colors.html" role="button" aria-label="تعلم الألوان">
+        <i class="fa-solid fa-palette" aria-hidden="true"></i>
+        <span>الألوان</span>
+      </a>
+      <a class="learning-card" href="learning/animals/animals.html" role="button" aria-label="تعلم الحيوانات">
+        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        <span>الحيوانات</span>
+      </a>
+    </div>
+    
+    <button class="back-btn" onclick="window.location.href='index.html'" role="button" aria-label="العودة للصفحة الرئيسية">
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      العودة للصفحة الرئيسية
+    </button>
+  </div>
+  
+  <script>
+    // تحسين التفاعل اللمسي لصفحة التعلم
+    document.addEventListener('DOMContentLoaded', function() {
+      const learningCards = document.querySelectorAll('.learning-card');
+      const backBtn = document.querySelector('.back-btn');
+      
+      // إضافة تأثيرات اللمس للبطاقات
+      learningCards.forEach(card => {
+        card.addEventListener('touchstart', function(e) {
+          this.style.transform = 'scale(0.95)';
+          this.style.transition = 'transform 0.1s ease';
+          
+          if (navigator.vibrate) {
+            navigator.vibrate(30);
+          }
+        });
+        
+        card.addEventListener('touchend', function(e) {
+          this.style.transform = 'scale(1)';
+          this.style.transition = 'transform 0.2s ease';
+        });
+      });
+      
+      // إضافة تأثيرات اللمس لزر العودة
+      if (backBtn) {
+        backBtn.addEventListener('touchstart', function(e) {
+          this.style.transform = 'scale(0.95)';
+          this.style.transition = 'transform 0.1s ease';
+          
+          if (navigator.vibrate) {
+            navigator.vibrate(20);
+          }
+        });
+        
+        backBtn.addEventListener('touchend', function(e) {
+          this.style.transform = 'scale(1)';
+          this.style.transition = 'transform 0.2s ease';
+        });
+      }
+      
+      // منع التحديد المزدوج
+      document.addEventListener('dblclick', function(e) {
+        e.preventDefault();
+      });
+    });
+
+    // قائمة الألعاب التعليمية
+    const LEARNING_GAMES = [
+        { id: 'letters', name: 'الحروف', img: 'learning/letters/letters.png' },
+        { id: 'colors', name: 'الألوان', img: 'learning/colors/colors.png' },
+        { id: 'numbers', name: 'الأرقام', img: 'learning/numbers/numbers.png' },
+        { id: 'animals', name: 'الحيوانات', img: 'learning/animals/animals.png' },
+        { id: 'memory-game', name: 'لعبة الذاكرة', img: 'games/memory-game/memory-game.png' }
+    ];
+    const PRICES = { colors: 20, numbers: 25, animals: 30, 'memory-game': 50 };
+    function isGameUnlocked(gameId) {
+        if (gameId === 'letters') return true;
+        const unlocked = JSON.parse(localStorage.getItem('unlockedGames') || '{}');
+        return !!unlocked[gameId];
+    }
+    function unlockGame(gameId) {
+        const unlocked = JSON.parse(localStorage.getItem('unlockedGames') || '{}');
+        unlocked[gameId] = true;
+        localStorage.setItem('unlockedGames', JSON.stringify(unlocked));
+        renderGames();
+    }
+    function buyGame(gameId) {
+        const price = PRICES[gameId];
+        let stars = parseInt(localStorage.getItem('stars') || '0');
+        if (stars < price) {
+            alert('رصيدك من النجوم غير كافٍ!');
+            return;
+        }
+        stars -= price;
+        localStorage.setItem('stars', stars);
+        unlockGame(gameId);
+        alert('تم فتح اللعبة بنجاح!');
+    }
+    function renderGames() {
+        const container = document.getElementById('games-list');
+        container.innerHTML = '';
+        LEARNING_GAMES.forEach(g => {
+            const unlocked = isGameUnlocked(g.id);
+            let html = `<div class='game-card' style='display:inline-block;width:170px;margin:16px;text-align:center;vertical-align:top;background:#fff;border-radius:14px;box-shadow:0 2px 12px #0001;padding:18px 8px;position:relative;'>`;
+            html += `<img src='${g.img || 'images/download.png'}' alt='${g.name}' style='width:90px;height:90px;object-fit:contain;margin-bottom:10px;'>`;
+            html += `<div style='font-size:1.2em;font-weight:bold;margin-bottom:8px;'>${g.name}</div>`;
+            if (unlocked) {
+                html += `<a href='${g.id === 'memory-game' ? 'games/memory-game/memory-game.html' : 'learning/' + g.id + '/' + g.id + '.html'}' class='play-btn' style='display:inline-block;padding:7px 22px;background:#4caf50;color:#fff;border-radius:7px;text-decoration:none;font-weight:bold;'>ابدأ</a>`;
+                html += `<div style='color:green;font-size:0.95em;margin-top:6px;'>مفتوحة</div>`;
+            } else {
+                html += `<div style='color:#c00;font-size:1.5em;margin-bottom:6px;'>&#128274;</div>`;
+                html += `<button onclick='buyGame("${g.id}")' style='padding:6px 18px;background:#ffd600;border:none;border-radius:7px;font-weight:bold;cursor:pointer;'>فتح (${PRICES[g.id]} ⭐)</button>`;
+            }
+            html += `</div>`;
+            container.innerHTML += html;
+        });
+    }
+    document.addEventListener('DOMContentLoaded', renderGames);
+  </script>
+  <div id='games-list' style='text-align:center;margin-top:32px;'></div>
+</body>
+</html> 

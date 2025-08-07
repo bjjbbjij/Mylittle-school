@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#219ebc" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>تعلم الحروف - My Little School</title>
+    <link rel="stylesheet" href="letters.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title" role="heading" aria-level="1">
+                <i class="fa-solid fa-font" aria-hidden="true"></i>
+                تعلم الحروف العربية
+            </h1>
+            <p class="subtitle" role="banner">Learn Arabic Letters</p>
+        </header>
+
+        <nav class="navigation" role="navigation" aria-label="التنقل">
+            <button class="nav-btn" onclick="window.location.href='../../learning.html'" role="button" aria-label="العودة لمنطقة التعلم">
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                العودة لمنطقة التعلم
+            </button>
+            <button class="nav-btn" onclick="window.location.href='../../index.html'" role="button" aria-label="العودة للصفحة الرئيسية">
+                <i class="fa-solid fa-home" aria-hidden="true"></i>
+                العودة للصفحة الرئيسية
+            </button>
+        </nav>
+
+        <main role="main" aria-label="الحروف العربية">
+            <div class="letters-grid">
+                <div class="letter-card" data-letter="أ" role="button" tabindex="0" aria-label="الحرف ألف">
+                    <div class="letter-display">أ</div>
+                    <h3>ألف</h3>
+                    <button class="listen-btn" onclick="playSound('Alif')" role="button" aria-label="استمع لصوت الحرف ألف">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ب" role="button" tabindex="0" aria-label="الحرف باء">
+                    <div class="letter-display">ب</div>
+                    <h3>باء</h3>
+                    <button class="listen-btn" onclick="playSound('Baa')" role="button" aria-label="استمع لصوت الحرف باء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ت" role="button" tabindex="0" aria-label="الحرف تاء">
+                    <div class="letter-display">ت</div>
+                    <h3>تاء</h3>
+                    <button class="listen-btn" onclick="playSound('Taa')" role="button" aria-label="استمع لصوت الحرف تاء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ث" role="button" tabindex="0" aria-label="الحرف ثاء">
+                    <div class="letter-display">ث</div>
+                    <h3>ثاء</h3>
+                    <button class="listen-btn" onclick="playSound('Thaa')" role="button" aria-label="استمع لصوت الحرف ثاء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ج" role="button" tabindex="0" aria-label="الحرف جيم">
+                    <div class="letter-display">ج</div>
+                    <h3>جيم</h3>
+                    <button class="listen-btn" onclick="playSound('Jeem')" role="button" aria-label="استمع لصوت الحرف جيم">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ح" role="button" tabindex="0" aria-label="الحرف حاء">
+                    <div class="letter-display">ح</div>
+                    <h3>حاء</h3>
+                    <button class="listen-btn" onclick="playSound('7aa')" role="button" aria-label="استمع لصوت الحرف حاء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="خ" role="button" tabindex="0" aria-label="الحرف خاء">
+                    <div class="letter-display">خ</div>
+                    <h3>خاء</h3>
+                    <button class="listen-btn" onclick="playSound('Khaa')" role="button" aria-label="استمع لصوت الحرف خاء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="د" role="button" tabindex="0" aria-label="الحرف دال">
+                    <div class="letter-display">د</div>
+                    <h3>دال</h3>
+                    <button class="listen-btn" onclick="playSound('Dal')" role="button" aria-label="استمع لصوت الحرف دال">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ذ" role="button" tabindex="0" aria-label="الحرف ذال">
+                    <div class="letter-display">ذ</div>
+                    <h3>ذال</h3>
+                    <button class="listen-btn" onclick="playSound('Thal')" role="button" aria-label="استمع لصوت الحرف ذال">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ر" role="button" tabindex="0" aria-label="الحرف راء">
+                    <div class="letter-display">ر</div>
+                    <h3>راء</h3>
+                    <button class="listen-btn" onclick="playSound('Raa')" role="button" aria-label="استمع لصوت الحرف راء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ز" role="button" tabindex="0" aria-label="الحرف زاي">
+                    <div class="letter-display">ز</div>
+                    <h3>زاي</h3>
+                    <button class="listen-btn" onclick="playSound('Zay')" role="button" aria-label="استمع لصوت الحرف زاي">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="س" role="button" tabindex="0" aria-label="الحرف سين">
+                    <div class="letter-display">س</div>
+                    <h3>سين</h3>
+                    <button class="listen-btn" onclick="playSound('Seen')" role="button" aria-label="استمع لصوت الحرف سين">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ش" role="button" tabindex="0" aria-label="الحرف شين">
+                    <div class="letter-display">ش</div>
+                    <h3>شين</h3>
+                    <button class="listen-btn" onclick="playSound('Sheen')" role="button" aria-label="استمع لصوت الحرف شين">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ص" role="button" tabindex="0" aria-label="الحرف صاد">
+                    <div class="letter-display">ص</div>
+                    <h3>صاد</h3>
+                    <button class="listen-btn" onclick="playSound('Sad')" role="button" aria-label="استمع لصوت الحرف صاد">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ض" role="button" tabindex="0" aria-label="الحرف ضاد">
+                    <div class="letter-display">ض</div>
+                    <h3>ضاد</h3>
+                    <button class="listen-btn" onclick="playSound('Dad')" role="button" aria-label="استمع لصوت الحرف ضاد">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ط" role="button" tabindex="0" aria-label="الحرف طاء">
+                    <div class="letter-display">ط</div>
+                    <h3>طاء</h3>
+                    <button class="listen-btn" onclick="playSound('Ta')" role="button" aria-label="استمع لصوت الحرف طاء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ظ" role="button" tabindex="0" aria-label="الحرف ظاء">
+                    <div class="letter-display">ظ</div>
+                    <h3>ظاء</h3>
+                    <button class="listen-btn" onclick="playSound('Dhad')" role="button" aria-label="استمع لصوت الحرف ظاء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ع" role="button" tabindex="0" aria-label="الحرف عين">
+                    <div class="letter-display">ع</div>
+                    <h3>عين</h3>
+                    <button class="listen-btn" onclick="playSound('Ayn')" role="button" aria-label="استمع لصوت الحرف عين">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="غ" role="button" tabindex="0" aria-label="الحرف غين">
+                    <div class="letter-display">غ</div>
+                    <h3>غين</h3>
+                    <button class="listen-btn" onclick="playSound('Ghayn')" role="button" aria-label="استمع لصوت الحرف غين">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ف" role="button" tabindex="0" aria-label="الحرف فاء">
+                    <div class="letter-display">ف</div>
+                    <h3>فاء</h3>
+                    <button class="listen-btn" onclick="playSound('Faa')" role="button" aria-label="استمع لصوت الحرف فاء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ق" role="button" tabindex="0" aria-label="الحرف قاف">
+                    <div class="letter-display">ق</div>
+                    <h3>قاف</h3>
+                    <button class="listen-btn" onclick="playSound('Qaf')" role="button" aria-label="استمع لصوت الحرف قاف">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ك" role="button" tabindex="0" aria-label="الحرف كاف">
+                    <div class="letter-display">ك</div>
+                    <h3>كاف</h3>
+                    <button class="listen-btn" onclick="playSound('Kaf')" role="button" aria-label="استمع لصوت الحرف كاف">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ل" role="button" tabindex="0" aria-label="الحرف لام">
+                    <div class="letter-display">ل</div>
+                    <h3>لام</h3>
+                    <button class="listen-btn" onclick="playSound('Lam')" role="button" aria-label="استمع لصوت الحرف لام">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="م" role="button" tabindex="0" aria-label="الحرف ميم">
+                    <div class="letter-display">م</div>
+                    <h3>ميم</h3>
+                    <button class="listen-btn" onclick="playSound('Meem')" role="button" aria-label="استمع لصوت الحرف ميم">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ن" role="button" tabindex="0" aria-label="الحرف نون">
+                    <div class="letter-display">ن</div>
+                    <h3>نون</h3>
+                    <button class="listen-btn" onclick="playSound('Noon')" role="button" aria-label="استمع لصوت الحرف نون">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ه" role="button" tabindex="0" aria-label="الحرف هاء">
+                    <div class="letter-display">ه</div>
+                    <h3>هاء</h3>
+                    <button class="listen-btn" onclick="playSound('Haa')" role="button" aria-label="استمع لصوت الحرف هاء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="و" role="button" tabindex="0" aria-label="الحرف واو">
+                    <div class="letter-display">و</div>
+                    <h3>واو</h3>
+                    <button class="listen-btn" onclick="playSound('Waw')" role="button" aria-label="استمع لصوت الحرف واو">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+                <div class="letter-card" data-letter="ي" role="button" tabindex="0" aria-label="الحرف ياء">
+                    <div class="letter-display">ي</div>
+                    <h3>ياء</h3>
+                    <button class="listen-btn" onclick="playSound('Yaa')" role="button" aria-label="استمع لصوت الحرف ياء">
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        استمع
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="letters.js"></script>
+</body>
+</html> 
